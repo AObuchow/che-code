@@ -85,6 +85,10 @@ export const serverOptions: OptionDescriptions<Required<ServerParsedArgs>> = {
 
 	'compatibility': { type: 'string' },
 
+
+	'profile': { type: 'string', cat: 'o', args: 'profileName', description: nls.localize('profileName', "Opens the provided folder or workspace with the given profile and associates the profile with the workspace. If the profile does not exist, a new empty one is created. A folder or workspace must be provided for the profile to take effect.") },
+
+
 	_: OPTIONS['_']
 };
 
@@ -200,6 +204,8 @@ export interface ServerParsedArgs {
 	'locate-shell-integration-path'?: string;
 
 	compatibility: string;
+
+	'profile'?: string;
 
 	_: string[];
 }
